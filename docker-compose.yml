@@ -1,0 +1,13 @@
+services:
+  sophia-memory:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    volumes:
+      - sophia_memory_data:/data
+
+volumes:
+  sophia_memory_data:
